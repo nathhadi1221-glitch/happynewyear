@@ -1,0 +1,7 @@
+{
+  "name": "Ethiopian New Year 2019",
+  "description": "A beautiful, emotional, mobile-first celebration experience for Ethiopian New Year 2019 featuring animated blooming Adey Abeba flowers, personalized photo galleries, and celebration packages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

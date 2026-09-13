@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-ethiopic: "Noto Sans Ethiopic", system-ui, sans-serif;
+  --font-display: "Cinzel", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer utilities {
+  .font-ethiopic {
+    font-family: var(--font-ethiopic);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-sans);
+  }
+  
+  /* Custom scrollbar hiding for horizontal touch gallery */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Dynamic gallery card sizing variables */
+  .gallery-scroll-container {
+    --gallery-photo-h: 310px;
+  }
+  @media (min-width: 640px) {
+    .gallery-scroll-container {
+      --gallery-photo-h: 375px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .gallery-scroll-container {
+      --gallery-photo-h: 400px;
+    }
+  }
+
+  .gallery-photo-box {
+    height: var(--gallery-photo-h, 380px);
+  }
+  
+  /* Soft warm text shadows and glows */
+  .gold-glow {
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.45), 0 0 40px rgba(245, 158, 11, 0.25);
+  }
+  .box-gold-glow {
+    box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.25), 0 0 15px -2px rgba(251, 191, 36, 0.15);
+  }
+  .box-silver-glow {
+    box-shadow: 0 0 35px -5px rgba(203, 213, 225, 0.25), 0 0 15px -2px rgba(226, 232, 240, 0.15);
+  }
+  .box-platinum-glow {
+    box-shadow: 0 0 35px -5px rgba(186, 230, 253, 0.25), 0 0 15px -2px rgba(224, 242, 254, 0.15);
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(-3.5deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(2deg) translateY(-3px);
+  }
+  100% {
+    transform: rotate(4.5deg) translateY(1px);
+  }
+}
+
+@keyframes floatPetal {
+  0% {
+    transform: translate3d(0, -10px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(60px, 100vh, 0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.04);
+  }
+}
+
+
